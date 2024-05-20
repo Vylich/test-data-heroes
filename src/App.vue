@@ -96,6 +96,7 @@ const getCards = () => {
       :key="character.id"
       :character="character"
     />
+
     <span v-if="characters.length === 0">Ничего не найдено</span>
   </div>
   <div class="pagination">
@@ -107,6 +108,8 @@ const getCards = () => {
 <style scoped>
 .container {
   display: flex;
+  width: 100%;
+  min-height: 100vh;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
