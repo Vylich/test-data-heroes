@@ -43,6 +43,8 @@ const submitSort = () => {
       infoPages.value = res.data.info;
     })
     .catch((err) => {
+      characters.value = [];
+      infoPages.value = {};
       console.log(err);
     });
 };
@@ -94,6 +96,7 @@ const getCards = () => {
       :key="character.id"
       :character="character"
     />
+    <span v-if="characters.length === 0">Ничего не найдено</span>
   </div>
   <div class="pagination">
     <button v-if="infoPages.prev" @click="getPagination('prev')">Назад</button>
